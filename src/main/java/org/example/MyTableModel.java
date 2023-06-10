@@ -22,7 +22,6 @@ public class MyTableModel extends AbstractTableModel {
             statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery("select * from " + tableN);
             ResultSetMetaData md = resultSet.getMetaData();
-            ;
             columnHead = new String[md.getColumnCount()];
             while (resultSet.next()) {
                 String[] row = new String[md.getColumnCount()];
