@@ -2,25 +2,25 @@ package org.example;
 
 import javax.swing.table.AbstractTableModel;
 import java.sql.*;
-import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 public class MyTableModel extends AbstractTableModel {
     private Connection connection;
-    private Statement statement;
-    private String tableN;
+    private String tableName;
     private String[] columnHead;
-    private ArrayList<String[]> dataArrayList = new ArrayList<>();
+    private List<String[]> dataArrayList = new LinkedList<>();
 
     public MyTableModel(Connection conn, String tableN) throws SQLException {
         this.connection = conn;
-        this.tableN = tableN;
+        this.tableName = tableN;
         addDate();
     }
 
     public void addDate() throws SQLException {
         try {
-            statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("select * from " + tableN);
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery("select * from " + tableName);
             ResultSetMetaData md = resultSet.getMetaData();
             columnHead = new String[md.getColumnCount()];
             while (resultSet.next()) {
