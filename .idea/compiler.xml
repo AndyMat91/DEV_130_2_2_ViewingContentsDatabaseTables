@@ -6,7 +6,6 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="DEV_130_2_2_ViewingContentsDatabaseTables" />
         <module name="ViewingContentsDatabaseTables" />
       </profile>
     </annotationProcessing>
